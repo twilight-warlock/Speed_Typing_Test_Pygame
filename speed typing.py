@@ -4,8 +4,12 @@ import sys
 import time
 import random
 from matplotlib import pyplot as plt
+import csv
+import os
 
-# 750 x 500
+os.system('py webCrawler.py')
+
+# 1000 x 500
 
 
 class Game:
@@ -85,6 +89,9 @@ class Game:
             self.draw_text(screen, "Reset", self.h - 70, 26, (100, 100, 100))
 
             print(self.results)
+            with open("results.csv", "a+", newline="") as f:
+                writer = csv.writer(f)
+                writer.writerow([self.total_time, self.accuracy, self.wpm])
 
             cars = ["Correct", "Incorrect"]
 

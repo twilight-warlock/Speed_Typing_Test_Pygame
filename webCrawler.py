@@ -12,7 +12,6 @@ url = "https://randomwordgenerator.com/sentence.php"
 
 # opening link in the browser
 driver.get(url)
-# sleep(5)
 
 inputVal = driver.find_element_by_id("qty")
 inputVal.clear()
